@@ -131,9 +131,9 @@ function big () {
 }
 ```
 
-十六: mysql安装[下载](https://blog.csdn.net/bobo553443/article/details/81383194)
+**十六:** mysql安装[下载](https://blog.csdn.net/bobo553443/article/details/81383194)
 
-十七: **ndoe+ mysql**
+**十七**: **node+ mysql**
 
 1: 新建文件夹
 
@@ -157,4 +157,382 @@ app.get('/', (req, res) => {
 ```
 
 res,req[参数](https://blog.csdn.net/yuhui01/article/details/81151045)
+
+**十八**: JS进阶[类](https://jingyan.baidu.com/article/4b52d702c6cd87fc5d774b57.html)
+
+```js
+class Car {
+      constructor (maker, price) {
+        this.maker = maker
+        this.price = price
+      }
+      getInfo () {
+        console.log(this.maker)
+      }
+    }
+    var car1 = new Car('hahha', '123')
+    car1.getInfo()
+    console.log(typeof (Car))
+```
+
+![](D:\Project\markdown\类.png)
+
+**十九**:[Vue.js中使用iView日期选择器并设置开始时间结束时间校验](https://www.cnblogs.com/xiaguliuxiang/p/9459917.html)
+
+```js
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Vue.js中使用iView日期选择器并设置开始时间结束时间校验</title>
+    <!-- import Vue.js -->
+    <script src="https://vuejs.org/js/vue.min.js"></script>
+    <!-- import stylesheet -->
+    <link rel="stylesheet" href="https://unpkg.com/iview/dist/styles/iview.css">
+    <!-- import iView -->
+    <script src="https://unpkg.com/iview/dist/iview.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <template>
+            <Row>
+                <Col span="12"> 开始时间:
+                <date-picker type="datetime" v-model="startTime" placeholder="请选择开始时间" :options="startTimeOption" @on-change="onStartTimeChange"></date-picker>
+                </Col>
+                <Col span="12"> 结束时间:
+                <date-picker type="datetime" v-model="endTime" placeholder="请选择结束时间" :options="endTimeOption" @on-change="onEndTimeChange"></date-picker>
+                </Col>
+            </Row>
+        </template>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    startTime: '',
+                    endTime: '',
+                    startTimeOption: {},
+                    endTimeOption: {}
+                }
+            },
+            mounted() {
+                this.startTime = '2018-08-08 00:00:00'
+                this.endTime = '2018-08-11 23:59:59'
+                this.onStartTimeChange(this.startTime)
+                this.onEndTimeChange(this.endTime)
+            },
+            methods: {
+                /**
+                 * 开始时间发生变化时触发,设置结束时间不可选择的日期
+                 * 结束时间应大于等于开始时间,且小于等于当前时间
+                 * @param {string} startTime 格式化后的日期
+                 * @param {string} type 当前的日期类型
+                 */
+                onStartTimeChange(startTime, type) {
+                    this.endTimeOption = {
+                        disabledDate(endTime) {
+                            return endTime < new Date(startTime) || endTime > Date.now()
+                        }
+                    }
+                },
+                /**
+                 * 结束时间发生变化时触发,设置开始时间不可选择的日期
+                 * 开始时间小于等于结束时间,且小于等于当前时间
+                 * @param {string} date 格式化后的日期
+                 * @param {string} type 当前的日期类型
+                 */
+                onEndTimeChange(endTime, type) {
+                    this.startTimeOption = {
+                        disabledDate(startTime) {
+                            return startTime > new Date(endTime) || startTime > Date.now()
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
+```
+
+二十: 换算时间
+
+d.getTime() -- 获取当前时间，单位 将是 毫秒。（时间坐标原点由 Date class 约定好的）
+exdays * 24 * 60 * 60 * 1000 -- 附加多少天，换算成 毫秒
+d.setTime（当前时间 + 附加时间） -- 设Date class 的对象 d 的 时间值 等于 （当前时间 + 附加时间），即目标时间。
+然后可以用想要的格式输出目标时间的 年月日时分秒。
+
+```js
+value () {
+ const date = new Date()
+ date.setTime(date.getTime() - 3600 * 1000 * 24)
+ return date
+}
+
+
+// 前一天和后一天
+Date curDate = new Date()
+// 前一天
+var preDate = new Date(curDate.getTime() - 24*60*60*1000)
+// 后一天
+var nextDate = new Date(curDate.getTime() + 24*60*60*1000)
+
+
+```
+
+**二十一:**[递归](https://blog.csdn.net/chad97/article/details/82729021)
+
+```js
+var i=0;
+function f1() {
+ i++;
+ (i<5) {
+   f1();
+ }
+  console.log("从前有座山，山里有个庙，庙里有个老和尚给小和尚讲故     事：");
+};
+f1();
+
+
+
+ // 求n个数字的和 n=5 ——->5+4+3+2+1
+//for 循环写法：
+var sum=0;
+for (var i=0;i<=5;i++){
+  sum+=i;
+}
+ console.log(sum);
+----------------------分割线---------------------------
+
+   function getSum(x) {
+        if (x==1){
+          return 1
+        }
+        return x+getSum(x-1);
+    };
+
+    var sum1=getSum(5);
+    console.log(sum1);
+    console.log(getSum(10));
+
+
+
+```
+
+**二十二:** **[h5 video](https://blog.csdn.net/weixin_41578603/article/details/81168466)**
+
+**二十三:** render添加[img](http://www.mamicode.com/info-detail-2328296.html)
+
+标签：[http](http://www.mamicode.com/so/1/http)   [AC](http://www.mamicode.com/so/1/AC)   [static](http://www.mamicode.com/so/1/static)   [没有](http://www.mamicode.com/so/1/没有)   [vue](http://www.mamicode.com/so/1/vue)   [文件夹](http://www.mamicode.com/so/1/文件夹)   [pac](http://www.mamicode.com/so/1/pac)   [bpa](http://www.mamicode.com/so/1/bpa)   [传递](http://www.mamicode.com/so/1/传递)   
+
+用props传递一张图片的src给子组件，发现在子组件中根本加载不到图片，打开控制台，发现img的src并没有被解析成正确的地址
+
+经过研究发现，如果图片是在static文件夹下，可以直接传递，如果在assets文件夹下，是需要require传入的。否则webpack解析不到正确的路径
+
+具体解释：https://blog.csdn.net/zgh0711/article/details/79712540
+
+[vue 通过props传递图片src给子组件](http://www.mamicode.com/info-detail-2328296.html)
+
+标签：[http](http://www.mamicode.com/so/1/http)   [AC](http://www.mamicode.com/so/1/AC)   [static](http://www.mamicode.com/so/1/static)   [没有](http://www.mamicode.com/so/1/没有)   [vue](http://www.mamicode.com/so/1/vue)   [文件夹](http://www.mamicode.com/so/1/文件夹)   [pac](http://www.mamicode.com/so/1/pac)   [bpa](http://www.mamicode.com/so/1/bpa)   [传递](http://www.mamicode.com/so/1/传递)   
+
+原文地址：https://www.cnblogs.com/lijianjian/p/9153287.html
+
+父组件传入图片路径和路由给子组件: https://blog.csdn.net/zgh0711/article/details/79712540
+
+**二十四:** vue实现跳转浏览器新的[标签页](https://www.jianshu.com/p/7ad62f3e36dd)
+
+window.[open(](https://zhidao.baidu.com/question/200963962.html))
+
+```js
+ window.opener = null
+ window.open('', '_parent')
+ window.close()
+
+
+```
+
+二十五: **vxe-table**
+
+[开发指南](https://xuliangzhan.github.io/vxe-table/#/table/edit/rowDisable)
+
+二十六: iview 列([内容自**定义**)](https://blog.csdn.net/qq_41725450/article/details/90054676)
+
+例如(文档中心文件夹的权限)
+
+二十七: **二叉树**
+
+js构建二叉树
+
+```js
+class TreeNode {
+      constructor (value) {
+        this.value = value
+        this.left = null
+        this.right = null
+      }
+      printTheTree () {
+        console.log(
+            `root value is ${this.value}, left child is ${JSON.stringify(this.left)},              right child is ${JSON.stringify(this.right)}`
+        )
+      }
+    }
+    const node3 = new TreeNode(3)
+    const node1 = new TreeNode(1)
+    const node6 = new TreeNode(6)
+    const node4 = new TreeNode(4)
+    const node7 = new TreeNode(7)
+    
+    node3.left = node1
+    node3.right = node6
+    node6.left = node4
+    node6.right = node7
+    node3.printTheTree()
+```
+
+1: **前序遍历**
+
+根节点 => 左子树 => 右子树
+
+问题: 给定一个二叉树，返回它的 *前序* 遍历。
+
+```js
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+var preorderTraversal = function(root) {
+    if (!root) return [];
+    var result = []
+    result.push(root.val)
+    result = result.concat(preorderTraversal(root.left))
+    result = result.concat(preorderTraversal(root.right))
+    return result
+};
+```
+
+2: **中序遍历**
+
+左子树 => 根节点 => 右子树
+
+对于二叉树:可以通过中序遍历得到一个递增的有序数列
+
+3: **后序遍历**
+
+左子树 =>  右子树 => 根节点
+
+删除树节点时,删除过程是按照后序顺序删除,左子树=>右子树=>节点本身
+
+二十八: [SCSS](https://blog.csdn.net/KimBing/article/details/89738636)
+
+二十九: 百分数与小数[互相转换](https://blog.csdn.net/weixin_40829761/article/details/80685168)
+
+```js
+  //百分数转化为小数
+		//1.先去掉百分号
+		//2.再除以100
+		//3.返回出去
+		
+		var percent = "4.2%";//申明要放在函数前
+		function toPoint(percent){
+   		 	var str=percent.replace("%","");
+    		        str= str/100;
+   		 	return str;
+		}
+		toPoint(percent);
+		var result = toPoint(percent);
+		document.write(result);//0.042
+		
+		//小数转化为分数
+		//1.先转化为number类型
+		//2.再乘以100
+		//3.保留小数位
+		var point = 0.042;
+		function toPercent(point){
+			var percent = Number(point*100).toFixed(1);
+			percent+="%";
+			return percent;
+		}
+	  	 var result = toPercent(point);
+		document.write("<br/>"+result);blog.csdn.net/weixin_40829761/article/details/80685168
+```
+
+百分数转小数: %替换成空,然后转为数字/100
+
+小数转百分数: value * 100,+%
+
+**三十:** js上舍入(天花板)下舍入(地板)
+
+天花板: Math.ceil(1.5) 向上取整
+
+栗子:  以上输出2
+
+地板: Math.floor(1.5) 向下取整
+
+栗子: 以上输出1
+
+周围: Math.round(1.5) 就近取整(最接近的整数)  四舍五入取整
+
+栗子: 以上输出2, 1.4输出1, 1.6 输出2
+
+银行家舍入法: 四舍六入五考虑: 五后非空向前进,五后为空看奇偶,五前为偶即舍去五前为奇即进一
+
+**三十一**: [状态码](https://blog.csdn.net/zhangmengleiblog/article/details/52513227)
+
+**三十二:** npm [漏洞修复](https://blog.csdn.net/weixin_40817115/article/details/81007774)
+
+- npm audit fix 控制台提示如下:
+
+- ```js
+  1 package update for 5 vulns involved breaking changes
+    (use `npm audit fix --force` to install breaking changes; or do it by hand)
+  ```
+
+  
+
+- npm audit fix --force 控制台提示如下：
+
+  ```js
+  added 199 packages from 111 contributors, removed 64 packages and updated 23 packages in 42.194sfixed 5 of 5 vulnerabilities in 1117 scanned packages
+    1 package update for 5 vulns involved breaking changes
+    (installed due to `--force` option)
+  ```
+
+  
+
+- npm audit
+
+```js
+  === npm audit security report ===
+
+found 0 vulnerabilities
+ in 4598 scanned packages
+```
+
+修复完成
+
+**npm audit fix**相关介绍详看链接
+
+**三十三:** 微观宏观
+
+**三十四:** 上传插件vue-simple-uploader
+
+文档[链接地址](https://github.com/simple-uploader/vue-uploader/blob/master/README_zh-CN.md)
+
+simple-uploader.js[链接地址](https://github.com/simple-uploader/Uploader/blob/develop/README_zh-CN.md)
+
+用法示例[链接地址](https://www.jb51.net/article/122086.htm)
+
+三十五: [虚拟dom](https://www.jianshu.com/p/af0b398602bc)
 
