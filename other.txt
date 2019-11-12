@@ -1,0 +1,50 @@
+json-server
+1.npm i json-server -g
+2.json-server -h 检测是否安装
+3.json-server -w 文件名.json
+
+git常用命令
+git init 初始化
+git add .添加到暂存区域
+git commit -m "说明做了啥"
+git remote 远程仓库地址
+git push 推送
+git diff 比较仓库,目录,暂存区的不同
+git reset 回退到上个版本
+git log查看版本提交记录
+git log --oneline --decorate --all --graph  显示简单摘要
+git status 查看状态
+git checkout 切换分支
+git branch 创建分支
+git merge 合并分支
+
+
+1:创建git初始化工作空间
+ Git Bush Here
+2:设置用户名: 
+  git config --global user.name ""
+3:注册邮箱: 
+  git config --global email.name ""
+4:检验: 
+  git config --list
+5:cd git文件
+6: git init
+7: 创建文件touch '..html'
+8: git add '..html'添加到缓存区
+9:git commit -m '创建..html'
+10:删除文件: rm -rf ..html
+
+
+vi&vim的俩种工作模式
+1:命令2:编辑
+2:创建,打开文件夹 vi[filename]filename可以是文件名或者文件路径,如果文件存在则打开,不存在则新建
+3:保存文件
+-在插入编辑模式下编辑文件
+-按下esc建,退出编辑模式,切换到命令模式
+-在命令模式下键入zz或者:wq保存修改并且退出vi
+-如果只想保存文件,则键入:w回车后底行会写入提示结果,停留在命令模式
+4:放弃所有文件修改
+-放弃所有文件修改:按下esc键进入命令模式,键入:q!回车后放弃修改并退出vi
+esc+:e!回到命令模式,不退出vi
+
+-----不使用循环怎么创建数组
