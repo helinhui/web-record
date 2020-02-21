@@ -534,5 +534,17 @@ simple-uploader.js[链接地址](https://github.com/simple-uploader/Uploader/blo
 
 用法示例[链接地址](https://www.jb51.net/article/122086.htm)
 
-三十五: [虚拟dom](https://www.jianshu.com/p/af0b398602bc)
+**三十五**: [虚拟dom](https://www.jianshu.com/p/af0b398602bc)
+
+**三十六:** return & return false区别
+
+详见[链接](https://blog.csdn.net/q3254421/article/details/83154247)
+
+**三十七:** canvas 实现架构图
+
+详见[链接](https://github.com/helinhui/web-record)
+
+**三十八**:gitlab详细操作
+
+[链接:](https://www.jianshu.com/p/fb61299086b6) 
 
