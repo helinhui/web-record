@@ -31,7 +31,6 @@ js string转[number](https://blog.csdn.net/For_GG/article/details/78557966)
 用`JSON.stringify`把对象转成字符串，再用`JSON.parse`把字符串转成新的对象。
 
 ```
-
 var obj1 = { body: { a: 10 } };
 var obj2 = JSON.parse(JSON.stringify(obj1));
 obj2.body.a = 20;
@@ -420,6 +419,7 @@ var preorderTraversal = function(root) {
     result = result.concat(preorderTraversal(root.right))
     return result
 };
+
 ```
 
 2: **中序遍历**
@@ -534,7 +534,7 @@ simple-uploader.js[链接地址](https://github.com/simple-uploader/Uploader/blo
 
 用法示例[链接地址](https://www.jb51.net/article/122086.htm)
 
-**三十五**: [虚拟dom](https://www.jianshu.com/p/af0b398602bc)
+**三十五:** [虚拟dom](https://www.jianshu.com/p/af0b398602bc)原理
 
 **三十六:** return & return false区别
 
@@ -544,7 +544,243 @@ simple-uploader.js[链接地址](https://github.com/simple-uploader/Uploader/blo
 
 详见[链接](https://github.com/helinhui/web-record)
 
-**三十八**:gitlab详细操作
+**三十八:**gitlab详细操作
 
 [链接:](https://www.jianshu.com/p/fb61299086b6) 
+
+**三十九**: [restful接口规范](https://blog.csdn.net/javamine/article/details/89640426)
+
+**四十:** 日期[格式化](https://www.cnblogs.com/aaronthon/p/10640767.html)
+
+**四十一:** 检测是[否是arr](https://www.cnblogs.com/lingdu87/p/9152806.html)
+
+**四十二:** icon[报错](https://www.lanka.cn/2402_2402.html)
+
+**四十三:** 数组的各种方法-是否改变原数组
+
+1:  shift(): 将第一个数组删除, **返回删除的数组**,原数组改变
+
+2: unshift(): 给数组前头加一个元素, **返回添加后的数组长度**,原数组改变
+
+3: pop(): 删除数组最后一个元素, **返回被删除的元素**,原数组改变
+
+4: push(item||Obj): 给数组末尾添加元素, **返回添加后的数组长度**,原数组改变
+
+5: reverse(): 顺序翻转, **返回翻转过来的数组**,原数组改变
+
+6: splice - 原数组改变
+
+- splice(start,1, item)替换下标start的元素为item,返回被替换的元素
+- splice(start,length)删除从start的开始的往后倒length位的元素,返回被删除的元素
+- splice(start,length, item)从下标start开始往后数length位替换为item,返回被替换的元素
+
+7: concat(array): 连接对个数组,返回新的数组,不改变原数组
+
+8: join('字符'): 数字加入特定字符变为字符串,不改变原数组
+
+9: slice(start,end): 返回选定的数组(从下标start开始的数组的第end位元素),不改变原数组
+
+数组的方法: 
+
+1: isArray():是否为数组
+
+2: forEach(function): 遍历数组,
+
+```js
+const arr = [1, 2, 3, 4]
+arr.forEach((item) => {
+   console.log(item)// 1, 2, 3, 4
+})
+```
+
+3: map(function): 通过指定函数处理数组的每个元素，并返回处理后的数组。
+
+```js
+const arr = [1, 2, 3, 4]
+const a = arr.map((item) => {
+  return item * 2
+})
+console.log(a) // [2, 4, 6, 8]
+console.log(arr)// [1, 2, 3, 4]
+```
+
+4: filter(function): 筛选符合条件的数组项
+
+```js
+const arr = [1, 2, 3, 4]
+const a = arr.filter((item) => {
+  return item === 2
+})
+console.log(a)
+console.log(arr)
+```
+
+5: reduce(function):  求出数组总和
+
+```js
+const arr = [1, 2, 3, 4]
+const a = arr.reduce((total, item) => {
+   return total + item
+})
+console.log(a) // 10
+console.log(arr) // [1, 2, 3, 4]
+```
+
+6:  every(function):  检测数组中每一项是否符合条件,有一项不符合返回false
+
+```js
+const arr = [1, 2, 3, 4]
+    const a = arr.every((item) => {
+      return item === 2
+    })
+    console.log(a) // false
+    console.log(arr) // [1, 2, 3, 4]
+```
+
+7: indexOf(item):判断数组中知否包含item,如果包含返回元素所在位置下标,反之返回-1
+
+```js
+// 存在
+const arr = [1, 2, 3, 4]
+const a = arr.indexOf(2)
+console.log(a) // 1
+console.log(arr) // [1, 2, 3, 4]
+
+// 不存在
+const arr = [1, 2, 3, 4]
+const a = arr.indexOf(5)
+console.log(a) // -1
+console.log(arr) // [1, 2, 3, 4]
+```
+
+8: toString(): 数组转为字符串
+
+```js
+const arr = [1, 2, 3, 4]
+const a = arr.toString()
+console.log(a) // 1,2,3,4
+console.log(arr) // [1, 2, 3, 4]
+```
+
+9: lastIndexOf(item): 返回item所在的最后的位置下标
+
+```js
+const arr = [1, 2, 3, 4, 2]
+const a = arr.lastIndexOf(2)
+console.log(a) // 4
+console.log(arr) // [1, 2, 3, 4, 2]
+```
+
+**四十四:** 开发工具库[流程](https://juejin.im/post/5e958d0f6fb9a03c6675cb5d?utm_source=gold_browser_extension)
+
+**四十五:** 
+
+- echarts相关知识点梳理
+- 1: x轴间隔上下显示,xAxis-data:["0","\n1","2","\n3","4","\n5","6"]
+- 2:  x轴间隔斜着显示,xAxis-axisLabel: {interval: 0, rotate: 45}/*interval是间隔距离,rotate是斜角度数*/
+
+**四十六:** npm run build 没有生成dist问题
+
+config-index.js下的build配置,dist就是打包后生成的静态文件路径
+
+```js
+ index: path.resolve(__dirname, '../dist/index.html'),
+ // Paths
+ assetsRoot: path.resolve(__dirname, '../dist'),
+ assetsSubDirectory: 'static',
+ assetsPublicPath: '/',
+
+```
+
+**四十七**: vue项目优化-map文件
+
+build执行之后dist-static-js文件里会有例如:1.js-1.js.map格式的文件,size很大
+
+map是什么东东:
+
+source map文件是js文件压缩后，文件的变量名替换对应、变量所在位置等元信息数据文件，一般这种文件和min.js主文件放在同一个目录下。 比如压缩后原变量是map，压缩后通过变量替换规则可能会被替换成a，这时source map文件会记录下这个mapping的信息，这样的好处就是说，在调试的时候，如果有一些JS报错，那么浏览器会通过解析这个map文件来重新merge压缩后的js,使开发者可以用未压缩前的代码来调试，这样会给我们带来很大的方便！**一句话，就是压缩的js与未压缩源文件js之间的映射关系文件。（就是一个桥梁）**
+
+这玩意就是辅助我调试用的，正式站其实作用不大，而且处于安全考虑，可以直接干掉。
+
+而这种还原性调试功能，目前**只有chorme才具有。**
+
+解决: config-index.js下的build配置 = >**productionSourceMap: false,**
+
+okay,打包之后,.map文件不见啦
+
+**四十八:** iview select下拉问题,
+
+描述: 后端返回的渲染name是这种格式: "测试-"前端项目"- 1",选中的时候获取不到对应id,无法选中
+
+原因: 前端项目被认为是一个变量,故无法选中解决,去掉""就好
+
+**四十九:** router-link和router-view的对应关系
+
+router-link就相当于a标签: router-view相当于href;
+
+router-link是to跳转的一个方式;
+
+router-view用来渲染通过路由映射过来的组件，当路径更改时， 内容也会发生更改
+
+router-link: tab选项卡中的头部选项router-view: tab选项卡的里的内容
+
+**五十:** slot 插槽
+
+vue里提供了一种将父组件的内容和子组件的模板整合的方法：内容分发，通过slot插槽来实现。
+
+**五十一:** 虚拟dom原理
+
+**五十二:** display;flex [用法](https://www.cnblogs.com/qingchunshiguang/p/8011103.html)
+
+**五十三:** HTML5.2修改内容
+
+1: dialog元素-默认隐藏,open属性显示,
+
+- show() 相当于一个弹框
+- showModal() 模态框,打开时不能操作背后页面的内容,
+
+2: `rel="apple-touch-icon"`  可添加size属性
+
+3: main标签,5.2之前,一个页面只有一个main标签,5.2开始,一个页面可有多个main标签,但是别的main标签要用hidden属性隐藏,display:none,visibility:hidden都不行,
+
+```html
+<main>...</main>
+<main hidden>...</main>
+<main hidden>...</main>
+```
+
+4: body内`<style>`,之前`<style>`仅在head中写,5.2 允许在 `<body>` 内使用 `<style>` 标签，就近定义结构样式。
+
+- `<body>` 内的 `<style>` 可能会导致之前元素的布局改变，令页面发生重绘。所以尽量避免使用。
+
+5: `<iframe>`添加 `allowpaymentrequest` 属性的方式，允许 `<iframe>` 内部网页使用  [Payment Request API](https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)。
+
+6: `legend` 5.2 之前，`<legend>` 中只能使用纯文本,5.2 开始可以使用标题元素了
+
+```html
+<form action="/action_page.php">
+ <fieldset>
+     < -- 5.2之前-- >
+	<legend>Personalia:</legend>
+     < -- 5.2-- >
+    <legend><h2>Basic Information</h2></legend>
+  </fieldset>
+</form>
+```
+
+7: 移除特性
+
+- `<keygen>`、`<menu>` 和 `<menuitem>` 元素
+- 文本 `<input>` 的 `inputmode` 和 `dropzone` 属性
+- `widow.showModalDialog()` 方法
+
+8: 以下三类元素不能作为 `<p>` 段落的内容。
+
+- 行内块、表格元素（Inline blocks、inline tables）
+- 浮动元素（floated）
+- 定位元素（positioned block-level elements）
+
+9: **strict doctype**
+
+HTML4 和 XHTML1 的严格文档类型声明（strict doctype）不再是有效 HTML。
 
